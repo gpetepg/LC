@@ -9,13 +9,11 @@ class Solution:
         seen = []
         
         curr = head
-        prev = None
         
         while curr:
             if curr in seen:
                 return True
             seen.append(curr)
-            nxt = curr.next
-            curr = nxt
-        
+            curr = curr.next
+            
         return False
