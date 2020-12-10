@@ -15,18 +15,15 @@ class Solution:
             for r, c in neighbors:
                 if r >= 0 and c >= 0 and r < len(grid) and c < len(grid[row]) and grid[r][c] == "1":
                     dfs(r, c)
-        
-        
+            
+            
         island_count = 0
+            
         
         for row in range(len(grid)):
             for col in range(len(grid[row])):
                 if grid[row][col] == "1":
                     island_count += 1
                     dfs(row, col)
-                    
+            
         return island_count
-    
-    
-    
- 
