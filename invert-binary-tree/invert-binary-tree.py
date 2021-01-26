@@ -7,7 +7,6 @@
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:
         stack = [root]
-        
         while stack:
             node = stack.pop()
             
@@ -20,4 +19,3 @@ class Solution:
             stack.append(node.right)
             
         return root
-        
