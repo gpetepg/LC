@@ -1,3 +1,4 @@
+[Discussion Post (created on 9/2/2021 at 15:25)](https://leetcode.com/problems/squares-of-a-sorted-array/solution/)  
 <h2>977. Squares of a Sorted Array</h2><h3>Easy</h3><hr><div><p>Given an integer array <code>nums</code> sorted in <strong>non-decreasing</strong> order, return <em>an array of <strong>the squares of each number</strong> sorted in non-decreasing order</em>.</p>
 
 <p>&nbsp;</p>
