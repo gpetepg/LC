@@ -1,5 +1,5 @@
 class Solution:
-    def get_adjacent_mines(self, board, x, y):
+    def get_adj_mines(self, board, x, y):
         num_mines = 0
         for r in range(x-1, x+2):
             for c in range(y-1, y+2):
@@ -7,7 +7,7 @@ class Solution:
                     num_mines += 1
         return num_mines
     
-    def updateBoard(self, board: List[List[str]], click: List[int]) -> List[List[str]]:           
+    def updateBoard(self, board: List[List[str]], click: List[int]) -> List[List[str]]:
         if not board:
             return board
         
@@ -15,7 +15,7 @@ class Solution:
         if board[x][y] == "M":
             board[x][y] = "X"
         else:
-            num_mines = self.get_adjacent_mines(board, x, y)
+            num_mines = self.get_adj_mines(board, x, y)
             if num_mines:
                 board[x][y] = str(num_mines)
             else:
@@ -23,7 +23,6 @@ class Solution:
                 for r in range(x-1, x+2):
                     for c in range(y-1, y+2):
                         if r >= 0 and r < len(board) and c >= 0 and c < len(board[r]) and board[r][c] != "B":
-                            self.updateBoard(board, [r, c])
-            
-        return board
+                            self.updateBoard(board, [r,c])
         
+        return board
