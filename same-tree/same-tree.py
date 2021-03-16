@@ -11,7 +11,6 @@ class Solution:
         while stack:
             l, r = stack.pop()
             
-            # if one or not the other they're not the same
             if not l and not r:
                 continue
             
@@ -20,8 +19,9 @@ class Solution:
             
             if l.val != r.val:
                 return False
-       
+            
             stack.append((l.left, r.left))
             stack.append((l.right, r.right))
+            
             
         return True
