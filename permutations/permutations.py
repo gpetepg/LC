@@ -1,19 +1,18 @@
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
-        def backtrack(first = 0):
-            if first == n:
-                output.append(nums[:])
-            
-            for i in range(first, n):
-                nums[first], nums[i] = nums[i], nums[first]
-                backtrack(first + 1)
-                nums[first], nums[i] = nums[i], nums[first]
         
-        n = len(nums)
-        output = []
-        backtrack()
-        return output
+        def backtrack(nums, visited, subset, res):
+            if len(subset) == len(nums):
+                res.append(subset)
+                
+            for i in range(len(nums)):
+                if i not in visited:
+                    visited.add(i)
+                    backtrack(nums, visited, subset + [nums[i]], res)
+                    visited.remove(i)
+            
+            
+        visited = set()
+        res = []
+        backtrack(nums,visited,[],res)
+        return res
